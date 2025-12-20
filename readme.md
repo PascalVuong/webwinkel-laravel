@@ -120,7 +120,7 @@ Ik bouw dit project volgens de **Vertical slices workflow**: elke feature wordt 
 
 # Upcoming features
 ## Vertical slices
-We bouwen features in slices, zodat elke feature compleet werkt:
+Ik bouw features in slices, zodat elke feature compleet werkt:
 
 ### Slice A: Categorieën
 - Database tabel `categories`
