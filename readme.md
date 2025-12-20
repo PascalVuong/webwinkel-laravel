@@ -122,7 +122,7 @@ Ik bouw dit project volgens de **Vertical slices workflow**: elke feature wordt 
 ## Vertical slices
 Ik bouw features in slices, zodat elke feature compleet werkt:
 
-### Slice A: Categorieën
+### Slice A: Categorieën ✅ (21/12/2025)
 - Database tabel `categories`
 - Admin CRUD (Filament): Categories beheren
 
@@ -172,10 +172,11 @@ Ik bouw features in slices, zodat elke feature compleet werkt:
 - **DevTools** (inspecteren van UI/HTML/links)
 
 # Developer Log
+
 ## 20/12/2025
 - Project opgezet en stack bevestigd (Laravel 12, PHP 8.4, MySQL, React/Inertia, Vite, Tailwind, Filament).
 - MySQL database `webwinkel` aangemaakt (utf8mb4).
-- Migratieproblemen opgelost/onderzocht rondom MySQL key length error **1071** (index te lang bij utf8mb4), inclusief fix-aanpak met kortere indexed strings (191) en/of globale default string length.
+- Migratieproblemen opgelost/onderzocht rondom MySQL key length error **1071** (index te lang bij utf8mb4), inclusief fix-aanpak met kortere indexed strings (191) en/of globale default string length + `Schema::defaultStringLength(191);` toegevoegd in `AppServiceProvider`.
 - Filament geïnstalleerd en `Category` resource gegenereerd.
 - `CategoryResource` opgeschoond naar Filament v4 signature (`Schema $schema`) + aparte `CategoryForm` en `CategoriesTable`.
 - Sidebar icon type mismatch gefixt (Filament v4 gebruikt `string|BackedEnum|null`).
@@ -183,3 +184,9 @@ Ik bouw features in slices, zodat elke feature compleet werkt:
 - Breadcrumb gedrag besproken en hoe Filament page labels vandaan komen.
 - Git repo opgezet: `.gitignore` aangevuld, `git init`, eerste commit voorbereidingen, remote `origin` gekoppeld en push-problemen opgelost (remote had al commits).
 - GitHub Actions (CI) gefixt: Laravel cache directories (`bootstrap/cache`, `storage/framework/*` en `storage/logs`) toegevoegd in repo zodat `composer install` + `php artisan package:discover` zonder errors kan draaien.
+- `slug` uniek gemaakt in de `categories` migration (`$table->string('slug')->unique();`) en Filament-validatie besproken om dubbele URL-namen te voorkomen.
+
+## 21/12/2025
+- Slice A (Categorieën) afgerond: Categories CRUD werkt volledig in Filament (Create / Edit / Delete) en de tabel toont netjes kolommen zoals `name` en `slug`.
+- Admin login opnieuw stabiel gemaakt na `php artisan migrate:fresh` door een admin user via `DatabaseSeeder` te kunnen aanmaken.
+- Onnodige extra migration voor slug-unique herkend als `Pending` en verwijderd (unique zat al in de originele `create_categories_table` migration).
