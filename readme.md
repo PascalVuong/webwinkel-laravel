@@ -1,11 +1,11 @@
 # Naam
-**Webwinkel (Laravel + React/Inertia + Filament)**
+**Webwinkel (Laravel + React/Inertia + TailwindCSS + Filament)**
 
 # Beschrijving
-Dit project is een webshop die gebouwd wordt met **Laravel 12** als backend en **Inertia + React** als frontend.  
+Dit project is een webshop die gebouwd wordt met **Laravel 12** als backend en **Inertia + React + TailwindCSS** als frontend.  
 Voor het beheer (admin) gebruiken we **Filament v4** om snel CRUD-schermen te maken voor o.a. categorieën, producten en bestellingen.
 
-We bouwen dit project volgens **Workflow 3: Vertical slices**: elke feature wordt “af” gemaakt van database → backend → frontend → admin, voordat we naar de volgende gaan.
+Ik bouw dit project volgens de **Vertical slices workflow**: elke feature wordt 1 voor 1 afgemaakt van database → backend → frontend → admin, voordat ik naar de volgende ga.
 
 # Techstack
 ## Backend
