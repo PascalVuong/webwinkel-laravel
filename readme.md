@@ -35,20 +35,82 @@ We bouwen dit project volgens **Workflow 3: Vertical slices**: elke feature word
 
 # ProjectStructuur
 ### Belangrijkste mappen/bestanden
-- `app/`
-  - `Filament/Resources/` (admin resources)
-- `database/`
-  - `migrations/` (tabellen/kolommen aanmaken)
-- `resources/`
-  - `js/` (React/Inertia + TypeScript)
-  - `css/` (Tailwind)
-- `routes/` (web routes)
-- `public/` (public assets)
-- `storage/` (logs, cache, uploads)
-- `tests/` (Pest/PHPUnit)
-- `composer.json` (PHP dependencies)
-- `package.json` (JS dependencies)
-- `vite.config.ts` (Vite config)
+```
+├── app/
+│   ├── Filament/
+│   │   └── Resources/
+│   │       └── Categories/
+│   │           ├── CategoryResource.php
+│   │           ├── Pages/
+│   │           │   ├── CreateCategory.php
+│   │           │   ├── EditCategory.php
+│   │           │   └── ListCategories.php
+│   │           ├── Schemas/
+│   │           │   └── CategoryForm.php
+│   │           └── Tables/
+│   │               └── CategoriesTable.php
+│   ├── Models/
+│   │   ├── Category.php
+│   │   └── User.php
+│   └── Providers/
+│       ├── Filament/
+│       │   └── AdminPanelProvider.php
+│       ├── AppServiceProvider.php
+│       └── FortifyServiceProvider.php
+├── bootstrap/
+│   ├── app.php
+│   ├── providers.php
+│   └── cache/
+│       ├── packages.php
+│       ├── services.php
+│       └── ... (overige cache-bestanden)
+├── config/
+│   └── ... (Laravel config bestanden)
+├── database/
+│   ├── factories/
+│   │   └── UserFactory.php
+│   ├── migrations/
+│   │   ├── 0001_01_01_000000_create_users_table.php
+│   │   ├── 0001_01_01_000001_create_cache_table.php
+│   │   ├── 0001_01_01_000002_create_jobs_table.php
+│   │   ├── 2025_08_26_100418_add_two_factor_columns_to_users_table.php
+│   │   └── 2025_12_19_233700_create_categories_table.php
+│   └── seeders/
+│       └── DatabaseSeeder.php
+├── public/
+│   ├── index.php
+│   ├── favicon.ico
+│   ├── ... (public assets)
+│   └── build/
+│       └── ... (Vite build output)
+├── resources/
+│   ├── css/
+│   │   └── app.css
+│   ├── js/
+│   │   ├── app.tsx
+│   │   ├── ssr.tsx
+│   │   └── ... (React/Inertia + TypeScript)
+│   └── views/
+│       └── app.blade.php
+├── routes/
+│   ├── console.php
+│   ├── web.php
+│   └── ... (extra route files)
+├── storage/
+│   └── ... (uploads/logs/framework mappen)
+├── tests/
+│   └── ... (Pest/PHPUnit tests)
+├── components.json
+├── composer.json
+├── composer.lock
+├── eslint.config.js
+├── package.json
+├── package-lock.json
+├── phpunit.xml
+├── readme.md
+├── tsconfig.json
+└── vite.config.ts
+```
 
 ### Admin voorbeeld (Category)
 - `app/Filament/Resources/Categories/CategoryResource.php`
@@ -57,7 +119,7 @@ We bouwen dit project volgens **Workflow 3: Vertical slices**: elke feature word
 - `app/Filament/Resources/Categories/Tables/CategoriesTable.php`
 
 # Upcoming features
-## Vertical slices (Workflow 3)
+## Vertical slices
 We bouwen features in slices, zodat elke feature compleet werkt:
 
 ### Slice A: Categorieën
