@@ -169,7 +169,7 @@ We bouwen features in slices, zodat elke feature compleet werkt:
 - **Vite** (frontend build/dev server)
 - **Composer** (PHP dependency manager)
 - **Git + GitHub**
-- **Brave DevTools** (inspecteren van UI/HTML/links)
+- **DevTools** (inspecteren van UI/HTML/links)
 
 # Developer Log
 ## 20/12/2025
