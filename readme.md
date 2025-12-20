@@ -182,3 +182,4 @@ Ik bouw features in slices, zodat elke feature compleet werkt:
 - Create button label (“New category”) gelokaliseerd via `ListCategories` header actions.
 - Breadcrumb gedrag besproken en hoe Filament page labels vandaan komen.
 - Git repo opgezet: `.gitignore` aangevuld, `git init`, eerste commit voorbereidingen, remote `origin` gekoppeld en push-problemen opgelost (remote had al commits).
+- GitHub Actions (CI) gefixt: Laravel cache directories (`bootstrap/cache`, `storage/framework/*` en `storage/logs`) toegevoegd in repo zodat `composer install` + `php artisan package:discover` zonder errors kan draaien.
