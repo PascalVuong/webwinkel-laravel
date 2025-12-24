@@ -30,7 +30,7 @@ class ProductController extends Controller
 
         $product->load(['category:id,name,slug']);
 
-        return Inertia::render('Producten/Show', [
+        return Inertia::render('producten/show', [
             'product' => [
                 'id' => $product->id,
                 'name' => $product->name,

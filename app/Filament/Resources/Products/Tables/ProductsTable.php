@@ -25,7 +25,7 @@ class ProductsTable
                     ->searchable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('price')
-                    ->money()
+                    ->money('EUR')
                     ->sortable(),
                 IconColumn::make('is_active')
                     ->boolean()
