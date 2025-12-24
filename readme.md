@@ -209,3 +209,11 @@ Ik bouw features in slices, zodat elke feature compleet werkt:
 - Slice A (Categorieën) afgerond: Categories CRUD werkt volledig in Filament (Create / Edit / Delete) en de tabel toont netjes kolommen zoals `name` en `slug`.
 - Admin login opnieuw stabiel gemaakt na `php artisan migrate:fresh` door een admin user via `DatabaseSeeder` te kunnen aanmaken.
 - Onnodige extra migration voor slug-unique herkend als `Pending` en verwijderd (unique zat al in de originele `create_categories_table` migration).
+
+## 23/12/2025
+- Slice B (Producten) opgezet: products tabel + Product model aangemaakt en gekoppeld met category_id als foreign key (relatie Product ↔ Categorie).
+- Filament ProductResource gebouwd: Products CRUD werkt in admin (Create / Edit / Delete) met ProductForm + ProductsTable.
+- Slug + validatie toegevoegd voor producten (unique + alpha_dash), en slug automatisch laten vullen vanuit productnaam met Str::slug() bij create.
+- Frontend routes toegevoegd voor producten: /producten (lijst) en /producten/{product:slug} (detail) via ProductController.
+- Inertia/React pages aangemaakt voor producten (lijst + detail).
+- Blank page issue opgelost door Inertia component path/casing te fixen (producten/index i.p.v. Producten/Index).
