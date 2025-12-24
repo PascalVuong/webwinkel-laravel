@@ -39,18 +39,32 @@ Ik bouw dit project volgens de **Vertical slices workflow**: elke feature wordt 
 ├── app/
 │   ├── Filament/
 │   │   └── Resources/
-│   │       └── Categories/
-│   │           ├── CategoryResource.php
+│   │       ├── Categories/
+│   │       │   ├── CategoryResource.php
+│   │       │   ├── Pages/
+│   │       │   │   ├── CreateCategory.php
+│   │       │   │   ├── EditCategory.php
+│   │       │   │   └── ListCategories.php
+│   │       │   ├── Schemas/
+│   │       │   │   └── CategoryForm.php
+│   │       │   └── Tables/
+│   │       │       └── CategoriesTable.php
+│   │       └── Products/
+│   │           ├── ProductResource.php
 │   │           ├── Pages/
-│   │           │   ├── CreateCategory.php
-│   │           │   ├── EditCategory.php
-│   │           │   └── ListCategories.php
+│   │           │   ├── CreateProduct.php
+│   │           │   ├── EditProduct.php
+│   │           │   └── ListProducts.php
 │   │           ├── Schemas/
-│   │           │   └── CategoryForm.php
+│   │           │   └── ProductForm.php
 │   │           └── Tables/
-│   │               └── CategoriesTable.php
+│   │               └── ProductsTable.php
+│   ├── Http/
+│   │   └── Controllers/
+│   │       └── ProductController.php
 │   ├── Models/
 │   │   ├── Category.php
+│   │   ├── Product.php
 │   │   └── User.php
 │   └── Providers/
 │       ├── Filament/
@@ -74,7 +88,8 @@ Ik bouw dit project volgens de **Vertical slices workflow**: elke feature wordt 
 │   │   ├── 0001_01_01_000001_create_cache_table.php
 │   │   ├── 0001_01_01_000002_create_jobs_table.php
 │   │   ├── 2025_08_26_100418_add_two_factor_columns_to_users_table.php
-│   │   └── 2025_12_19_233700_create_categories_table.php
+│   │   ├── 2025_12_19_233700_create_categories_table.php
+│   │   ├── 2025_12_23_170231_create_products_table.php
 │   └── seeders/
 │       └── DatabaseSeeder.php
 ├── public/
@@ -87,6 +102,10 @@ Ik bouw dit project volgens de **Vertical slices workflow**: elke feature wordt 
 │   ├── css/
 │   │   └── app.css
 │   ├── js/
+│   │   ├── pages/
+│   │   │   └── producten/
+│   │   │       ├── index.tsx
+│   │   │       └── show.tsx
 │   │   ├── app.tsx
 │   │   ├── ssr.tsx
 │   │   └── ... (React/Inertia + TypeScript)
@@ -126,7 +145,7 @@ Ik bouw features in slices, zodat elke feature compleet werkt:
 - Database tabel `categories`
 - Admin CRUD (Filament): Categories beheren
 
-### Slice B: Producten
+### Slice B: Producten ✅ (23/12/2025)
 - Producten CRUD (Filament)
 - Producten tonen op frontend (lijst + detail)
 - Relatie Product ↔ Categorie
